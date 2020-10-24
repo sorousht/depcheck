@@ -26,7 +26,7 @@ const readPackage = async (): Promise<Package> => {
 const readRequirements = async (): Promise<Requirements> => {
   return {
     dependencies: {
-      chalk: "4.0.0",
+      chalk: '4.0.0',
     },
   };
 };
