@@ -1,6 +1,9 @@
-export const sum = (a: number, b: number) => {
-  if ('development' === process.env.NODE_ENV) {
-    console.log('boop');
+import { check } from "./check";
+
+check().then((passed) => {
+  if (!passed) {
+    process.exit(1);
+  } else {
+    process.exit(0);
   }
-  return a + b;
-};
+});
