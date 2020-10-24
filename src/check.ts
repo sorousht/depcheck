@@ -1,4 +1,3 @@
-import yaml from 'yaml';
 import fs from 'fs/promises';
 import path from 'path';
 import semver from 'semver';
