@@ -4,8 +4,6 @@ import path from 'path';
 import semver from 'semver';
 import chalk from 'chalk';
 
-const REQ_FILE = './req.yml';
-
 type Requirements = {
   dependencies: Record<string, string>;
 };
@@ -26,12 +24,16 @@ const readPackage = async (): Promise<Package> => {
 };
 
 const readRequirements = async (): Promise<Requirements> => {
-  const requirementsFile = await fs.readFile(REQ_FILE);
+  const requirements = `
+  --- 
+  dependencies: 
+    chalk: "4.0.0"
+  `;
 
   return {
     dependencies: {},
     devDependencies: {},
-    ...yaml.parse(requirementsFile.toString()),
+    ...yaml.parse(requirements),
   };
 };
 
