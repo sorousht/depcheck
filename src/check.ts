@@ -24,16 +24,10 @@ const readPackage = async (): Promise<Package> => {
 };
 
 const readRequirements = async (): Promise<Requirements> => {
-  const requirements = `
-  --- 
-  dependencies: 
-    chalk: "4.0.0"
-  `;
-
   return {
-    dependencies: {},
-    devDependencies: {},
-    ...yaml.parse(requirements),
+    dependencies: {
+      chalk: "4.0.0",
+    },
   };
 };
 
