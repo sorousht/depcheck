@@ -35,15 +35,20 @@ const readRequirements = async (): Promise<Requirements> => {
   };
 };
 
-export const satisfies = (packageVersion: string, requirement: string): boolean => {
+export const satisfies = (
+  packageVersion: string,
+  requirement: string
+): boolean => {
   return semver.gte(packageVersion, requirement);
-}
-
-const report = (name: string, version: string, minVersion: string): void => {
-  console.log(`The minimum accepted version of ${name} is ${chalk.green(minVersion)}, but your repo uses ${chalk.red(version)}`);
 };
 
-
+const report = (name: string, version: string, minVersion: string): void => {
+  console.log(
+    `The minimum accepted version of ${name} is ${chalk.green(
+      minVersion
+    )}, but your repo uses ${chalk.red(version)}`
+  );
+};
 
 export const check = async (): Promise<boolean> => {
   let passed = true;

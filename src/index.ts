@@ -1,6 +1,6 @@
-import { check } from "./check";
+import { check } from './check';
 
-check().then((passed) => {
+check().then(passed => {
   if (!passed) {
     process.exit(1);
   } else {
